@@ -1,0 +1,77 @@
+@media (max-width:789px){
+   body.lock{
+      overflow: hidden;
+   }
+   .header{
+      &__burger{
+         display: block;
+         position: relative;
+         width: 30px;
+         height: 20px;
+         position: relative;
+         z-index: 3;
+         & span,
+         &::before,
+         &::after{
+            position: absolute;
+            left: 0px;
+            height: 2px;
+            width: 100%;
+            background: $hd-color;
+            transition: all 0.3s linear;
+         }
+         &::before,
+         &::after{
+            content: "";
+         }
+         &::before{
+            top: 0px;
+         }
+         &::after{
+            bottom: 0px;
+         }
+         & span{
+            top: 50%;
+            transform: scale(1) translateY(-50%);
+            transition: all 0.2s linear;
+         }
+         &._active::before{
+            transform: rotate(45deg);
+            top: 9px;
+         }
+         &._active span{
+            transform: scale(0);
+         }
+         &._active::after{
+            transform: rotate(-45deg);
+            bottom: 9px;
+         }
+      }
+      &__menu{
+         position: fixed;
+         top: -100%;
+         left: 0;
+         width: 100%;
+         background: rgba($color: #000000, $alpha: 0.8);
+         padding: 70px 0px 20px 0px;
+         overflow: auto;
+         transition: all 0.3s linear;
+         &._active{
+            top: 0;
+         }
+      }
+      &__list{
+         display: block;
+         & li{
+            margin: 0 0 20px 0;
+            text-align: center;
+            &:first-child{
+               margin: 0 0 20px 0;
+            }
+         }
+      }
+      &__link{
+         font-size: 20px;
+      }
+   }
+}
