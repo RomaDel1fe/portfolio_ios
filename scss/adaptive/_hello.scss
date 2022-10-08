@@ -1,0 +1,27 @@
+@media (max-width:426px){
+   .hello{
+      &__text{
+         & h1{
+            font-size: 42px;
+         }
+         & p{
+            font-size: 22px;
+         }
+      }
+   }
+}
+
+@media (max-width:376px){
+   .hello__social{
+      flex-direction: column;
+   }
+   .social__list{
+      margin: 0 0 6px 0;
+   }
+   .social__link{
+      padding: 6px 0;
+   }
+   .social__download{
+      // width: 126px;
+   }
+}

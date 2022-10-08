@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'icomoon';
-  src: url("../fonts/icons/icomoon.eot?74lkbn");
-  src: url("../fonts/icons/icomoon.eot?74lkbn#iefix") format("embedded-opentype"), url("../fonts/icons/icomoon.ttf?74lkbn") format("truetype"), url("../fonts/icons/icomoon.woff?74lkbn") format("woff"), url("../fonts/icons/icomoon.svg?74lkbn#icomoon") format("svg");
+  src: url("../fonts/icons/icomoon.eot?jf4npe");
+  src: url("../fonts/icons/icomoon.eot?jf4npe#iefix") format("embedded-opentype"), url("../fonts/icons/icomoon.ttf?jf4npe") format("truetype"), url("../fonts/icons/icomoon.woff?jf4npe") format("woff"), url("../fonts/icons/icomoon.svg?jf4npe#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -23,6 +23,10 @@
 
 .icon-clip:before {
   content: "\e900";
+  font-size: 22px;
+  color: #211B12;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
 }
 
 .icon-code:before {
@@ -40,7 +44,9 @@
 
 .icon-instagram:before {
   content: "\e904";
-  color: radial-gradient(127.77% 127.77% at 14.93% 100.35%, #FFB140 0%, #FF5445 25.6%, #FC2B82 59.9%, #8E40B7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: radial-gradient(127.77% 127.77% at 14.93% 100.35%, #FFB140 0%, #FF5445 25.6%, #FC2B82 59.9%, #8E40B7 100%);
 }
 
 .icon-linkedin:before {
@@ -52,15 +58,9 @@
   content: "\e906";
 }
 
-.icon-telegram .path1:before {
+.icon-telegram:before {
   content: "\e907";
-  color: linear-gradient(90deg, #2AABEE 0.07%, #229ED9 100%);
-}
-
-.icon-telegram .path2:before {
-  content: "\e908";
-  margin-left: -1em;
-  color: white;
+  color: #229ed9;
 }
 
 /* reset css */
@@ -213,6 +213,109 @@ a {
   font-weight: 700;
 }
 
+.content {
+  padding: 60px 0 0 0;
+}
+
+.hello__text h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 125%;
+  color: #211B12;
+  margin: 0 0 8px 0;
+}
+
+.hello__text p {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 135%;
+  color: #211B12;
+  margin: 0 0 24px 0;
+}
+
+.hello__text p span {
+  color: #BF7506;
+}
+
+.hello__content {
+  max-width: 530px;
+  padding: 24px 0 0 0;
+  margin: 0 auto;
+}
+
+.hello__social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.social__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social__list li {
+  display: inline-block;
+  margin: 0 8px 0 0;
+}
+
+.social__link span {
+  font-size: 24px;
+  padding: 6px;
+}
+
+.social__download {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #211B12;
+  padding: 7px 8px;
+  position: relative;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.social__download::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #BF7506;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.social__download:hover {
+  color: #FFF !important;
+  background-color: transparent;
+}
+
+.social__download:hover .icon-clip::before {
+  color: #FFF !important;
+}
+
+.social__download:hover::after {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
 @media (max-width: 789px) {
   body.lock {
     overflow: hidden;
@@ -290,5 +393,32 @@ a {
   }
   .header__link {
     font-size: 20px;
+  }
+  .header__link::after {
+    display: none;
+  }
+}
+
+@media (max-width: 426px) {
+  .hello__text h1 {
+    font-size: 42px;
+  }
+  .hello__text p {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 376px) {
+  .hello__social {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .social__list {
+    margin: 0 0 6px 0;
+  }
+  .social__link {
+    padding: 6px 0;
   }
 }
