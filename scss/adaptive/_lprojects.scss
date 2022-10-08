@@ -1,0 +1,15 @@
+@media (max-width:769px){
+   .lprojects__list{
+      justify-content: center;
+   }
+   .card{
+      margin: 0 0 16px 0;
+   }
+}
+@media (max-width:426px){
+   .lprojects__title{
+      & h2{
+         font-size: 42px;
+      }
+   }
+}
