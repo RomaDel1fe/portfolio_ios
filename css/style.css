@@ -322,6 +322,7 @@ a {
 
 .lprojects {
   padding: 0 0 20px 0;
+  margin: 0 0 100px 0;
 }
 
 .lprojects__title {
@@ -481,6 +482,108 @@ a {
   margin: 0 4px 0 0;
 }
 
+.about {
+  padding: 0 0 20px 0;
+}
+
+.about__bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 40px 0;
+}
+
+.about__img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 360px;
+          flex: 1 0 360px;
+  max-width: 360px;
+  max-height: 440px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about__img img {
+  width: 100%;
+  -webkit-transform: scale(1.8) translate(5%, 12.5%);
+          transform: scale(1.8) translate(5%, 12.5%);
+}
+
+.about__bio-info {
+  display: inline-block;
+  padding: 27px 0 0 0;
+  margin: 0 0 0 56px;
+}
+
+.about__bio-title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 135%;
+  color: #211B12;
+  margin: 0 0 16px 0;
+}
+
+.about__bio-title span {
+  font-size: 32px;
+  line-height: 125%;
+  color: #BF7506;
+}
+
+.about__bio-description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #211B12;
+  margin: 0 0 16px 0;
+}
+
+.about__bio-keywords {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  color: #DD9C3C;
+  margin: 0 0 16px 0;
+}
+
+.about__skills-title {
+  margin: 0 0 13px;
+}
+
+.about__skills-title h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 135%;
+  color: #211B12;
+}
+
+.tags__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.tags__item {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  padding: 2px 8px;
+  margin: 0 4px 0 0;
+  border: 1px solid #BF7506;
+  border-radius: 4px;
+}
+
+.tags__item span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #211B12;
+}
+
 @media (max-width: 789px) {
   body.lock {
     overflow: hidden;
@@ -589,6 +692,9 @@ a {
 }
 
 @media (max-width: 769px) {
+  .lprojects {
+    margin: 0 0 50px 0;
+  }
   .lprojects__list {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -602,5 +708,27 @@ a {
 @media (max-width: 426px) {
   .lprojects__title h2 {
     font-size: 42px;
+  }
+  .card__title h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 769px) {
+  .about__bio {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .about__img {
+    margin: 0 auto;
+  }
+  .about__bio-info {
+    padding: 0;
+    margin: 0;
+  }
+  .tags__item {
+    margin: 0 4px 4px 0;
   }
 }

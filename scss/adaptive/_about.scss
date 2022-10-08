@@ -1,0 +1,17 @@
+@media (max-width:769px){
+   .about{
+      &__bio{
+         flex-direction: column-reverse;
+      }
+      &__img{
+         margin: 0 auto;
+      }
+      &__bio-info{
+         padding: 0;
+         margin: 0;
+      }
+   }
+   .tags__item{
+      margin: 0 4px 4px 0;
+   }
+}

@@ -1,4 +1,7 @@
 @media (max-width:769px){
+   .lprojects{
+      margin: 0 0 50px 0;
+   }
    .lprojects__list{
       justify-content: center;
    }
@@ -10,6 +13,11 @@
    .lprojects__title{
       & h2{
          font-size: 42px;
+      }
+   }
+   .card__title{
+      & h3{
+         font-size: 22px;
       }
    }
 }
