@@ -1,0 +1,99 @@
+.contact {
+   padding: 0 0 20px 0;
+}
+.form {
+   display: block;
+   max-width: 435px;
+   margin: 0 auto;
+		&__title {
+         margin: 0 0 16px 0;
+         & h3{
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 125%;
+            color: $m-color;
+         }
+		}
+      &__label{
+         position: relative;
+         top: 12px;
+         left: 16px;
+         font-weight: 400;
+         font-size: 16px;
+         line-height: 150%;
+         color: $ft-color;
+         padding: 0 8px;
+         background: #FFF;
+      }
+		&__input {
+         display: block;
+         font-weight: 500;
+         font-size: 20px;
+         height: 56px;
+         width: calc(100% - 28px);
+         padding: 4px 6px 4px 16px;
+         margin: 0 0 24px 0;
+         color: $hd-color2;
+         border: 3px solid $br-color;
+         border-radius: 4px;
+         outline: none;
+         transition: all 0.2s linear;
+         &:hover{
+            border-color: $ft-color;
+         }
+         &:focus{
+            border-color: $hd-color;
+         }
+         &:active{
+            border-color: $hd-color2;
+         }
+		}
+
+		&__btn {
+         text-align: right;
+		}
+
+		&__btn-link {
+         display: inline-flex;
+         align-items: center;
+         font-weight: 700;
+         font-size: 16px;
+         line-height: 150%;
+         color: $m-color;
+         background: transparent;
+         padding: 7px 8px;
+         border: 0;
+         position: relative;
+         transition: all 0.3s linear;
+         &::after{
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            height: 2px;
+            width: 100%;
+            z-index: -1;
+            content: '';
+            color: #000 !important;
+            background: $hd-color;
+            transition: all 0.3s linear;
+         }
+         &:hover{
+            color: #FFF !important;
+            background-color: transparent;
+            & .icon-clip::before{
+               color: #FFF !important;
+            }
+         }
+         &:hover::after{
+            bottom: 0%;
+            top: auto;
+            height: 100%;
+         }
+		}
+}
+#message{
+   height: 141px;
+}
+

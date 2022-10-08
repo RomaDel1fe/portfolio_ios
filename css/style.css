@@ -56,6 +56,7 @@
 
 .icon-send:before {
   content: "\e906";
+  margin: 0 5px 0 0;
 }
 
 .icon-telegram:before {
@@ -138,7 +139,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: #FFF;
   z-index: 2;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
@@ -484,6 +485,7 @@ a {
 
 .about {
   padding: 0 0 20px 0;
+  margin: 0 0 100px 0;
 }
 
 .about__bio {
@@ -582,6 +584,125 @@ a {
   font-size: 16px;
   line-height: 150%;
   color: #211B12;
+}
+
+.contact {
+  padding: 0 0 20px 0;
+}
+
+.form {
+  display: block;
+  max-width: 435px;
+  margin: 0 auto;
+}
+
+.form__title {
+  margin: 0 0 16px 0;
+}
+
+.form__title h3 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 125%;
+  color: #211B12;
+}
+
+.form__label {
+  position: relative;
+  top: 12px;
+  left: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #83807C;
+  padding: 0 8px;
+  background: #FFF;
+}
+
+.form__input {
+  display: block;
+  font-weight: 500;
+  font-size: 20px;
+  height: 56px;
+  width: calc(100% - 28px);
+  padding: 4px 6px 4px 16px;
+  margin: 0 0 24px 0;
+  color: #DD9C3C;
+  border: 3px solid #E0DEDC;
+  border-radius: 4px;
+  outline: none;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.form__input:hover {
+  border-color: #83807C;
+}
+
+.form__input:focus {
+  border-color: #BF7506;
+}
+
+.form__input:active {
+  border-color: #DD9C3C;
+}
+
+.form__btn {
+  text-align: right;
+}
+
+.form__btn-link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #211B12;
+  background: transparent;
+  padding: 7px 8px;
+  border: 0;
+  position: relative;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.form__btn-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+  z-index: -1;
+  content: '';
+  color: #000 !important;
+  background: #BF7506;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.form__btn-link:hover {
+  color: #FFF !important;
+  background-color: transparent;
+}
+
+.form__btn-link:hover .icon-clip::before {
+  color: #FFF !important;
+}
+
+.form__btn-link:hover::after {
+  bottom: 0%;
+  top: auto;
+  height: 100%;
+}
+
+#message {
+  height: 141px;
 }
 
 @media (max-width: 789px) {
@@ -715,6 +836,9 @@ a {
 }
 
 @media (max-width: 769px) {
+  .about {
+    margin: 0 0 50px 0;
+  }
   .about__bio {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
