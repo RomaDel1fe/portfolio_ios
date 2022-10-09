@@ -41,7 +41,7 @@ var minOffset = 55;
       burger.classList.remove('_scrolled');
     } 
   }
-
+onscroll()
 
 
 if (animItems.length > 0) {

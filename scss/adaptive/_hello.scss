@@ -2,6 +2,28 @@
    .hello__hand{
       opacity: 0.3;
    }
+   @keyframes hello{
+      0%{
+         transform: rotate(0);
+         opacity: 0.3;
+      }
+      25%{
+         transform: rotate(15deg);
+         opacity: 0.5;
+      }
+      50%{
+         transform: rotate(0);
+         opacity: 0.5;
+      }
+      75%{
+         transform: rotate(15deg);
+         opacity: 0.5;
+      }
+      100%{
+         transform: rotate(0);
+         opacity: 0.3;
+      }
+   }
 }
 
 @media (max-width:426px){

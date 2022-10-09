@@ -7,7 +7,18 @@
          font-weight: 700;
          font-size: 48px;
          line-height: 125%;
+         color: $m-color;
+      }
+      &-span{
+         display: inline-block;
          color: $hd-color;
+         &._anim._active{
+            animation-name: bounce;
+            animation-duration: 1.9s;
+            animation-delay: 1.5s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+         }
       }
    }
 
@@ -136,4 +147,43 @@
 }
 .icon-demo {
    margin: 0 4px 0 0; 
+}
+
+@keyframes bounce {
+   0% {
+      transform: translateY(0px);
+      animation-timing-function: ease-in;
+      opacity: 1;
+   }
+   24% {
+      opacity: 1;
+   }
+   40% {
+      transform: translateY(-15px);
+      animation-timing-function: ease-in;
+   }
+   65% {
+      transform: translateY(-12px);
+      animation-timing-function: ease-in;
+   }
+   82% {
+      transform: translateY(-6px);
+      animation-timing-function: ease-in;
+   }
+   93% {
+      transform: translateY(-4px);
+      animation-timing-function: ease-in;
+   }
+   25%,
+   55%,
+   75%,
+   87% {
+      transform: translateY(0px);
+      animation-timing-function: ease-out;
+   }
+   100% {
+      transform: translateY(0px);
+      animation-timing-function: ease-out;
+      opacity: 1;
+   }
 }
