@@ -11,7 +11,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: #FFF;
+      background-color: transparent;
       z-index: 2;
       transition: all 0.3s linear;
    }
@@ -31,6 +31,12 @@
    }
 
    &__menu {
+      &._scrolled{
+         padding: 4px 4px 4px 8px;
+         background: #FFF;
+         border-radius: 4px;
+         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+      }
    }
 
    &__list {

@@ -1,5 +1,13 @@
 .contact {
    padding: 0 0 20px 0;
+   margin: 0 0 50px 0;
+   position: relative;
+   &__hand{
+      position: absolute;
+      top: 80px;
+      right: 0;
+      z-index: -1;
+   }
 }
 .form {
    display: block;
@@ -34,6 +42,7 @@
          padding: 4px 6px 4px 16px;
          margin: 0 0 24px 0;
          color: $hd-color2;
+         background: transparent;
          border: 3px solid $br-color;
          border-radius: 4px;
          outline: none;

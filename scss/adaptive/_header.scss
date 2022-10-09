@@ -14,7 +14,7 @@
          &::before,
          &::after{
             position: absolute;
-            left: 0px;
+            right: 0px;
             height: 2px;
             width: 100%;
             background: $hd-color;
@@ -46,6 +46,43 @@
             transform: rotate(-45deg);
             bottom: 9px;
          }
+         &._scrolled{
+            padding: 6px;
+            background: #FFF;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+            &::before{
+               top: 6px;
+               right: 6px;
+               width: 30px;
+            }
+            & span{
+               right: 6px;
+               width: 30px;
+            }
+            &::after{
+               bottom: 6px;
+               right: 6px;
+               width: 30px;
+            }
+            &._active{
+               padding: 0;
+               background: transparent;
+               border-radius: 0;
+               box-shadow: none;
+            }
+            &._active::before{
+               transform: rotate(45deg);
+               top: 9px;
+            }
+            &._active span{
+               transform: scale(0);
+            }
+            &._active::after{
+               transform: rotate(-45deg);
+               bottom: 9px;
+            }
+         }
       }
       &__menu{
          position: fixed;
@@ -58,6 +95,12 @@
          transition: all 0.3s linear;
          &._active{
             top: 0;
+         }
+         &._scrolled{
+            padding: 70px 0px 20px 0px;
+            background: rgba($color: #000000, $alpha: 0.8);
+            border-radius: 0;
+            box-shadow: none;
          }
       }
       &__list{
