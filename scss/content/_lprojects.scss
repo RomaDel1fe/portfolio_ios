@@ -30,17 +30,14 @@
       flex-wrap: wrap;
       justify-content: space-between;
    }
+}
 
-   &__card {
-      flex: 0 1 399px;
+.card {
+   flex: 0 1 399px;
       margin: 0 5px 0 0;
       &:last-child{
          margin: 0;
       }
-   }
-}
-
-.card {
    &:hover img{
       transform: scale(1.05);
    }
