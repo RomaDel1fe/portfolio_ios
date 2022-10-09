@@ -1,5 +1,6 @@
 .content {
    padding: 60px 0 0 0;
+   overflow: hidden;
 }
 .hello {
    margin: 0 0 114px 0;
@@ -7,6 +8,15 @@
       position: absolute;
       top: 0;
       z-index: -1;
+      transition: all 0.2s linear;
+      
+      & img{
+         width: 100%;
+      }
+      &._anim._active{
+         animation-name: hello;
+         animation-duration: 2s;
+      }
    }
 		&__text {
          & h1{
@@ -98,3 +108,20 @@
 		}
 }
 
+@keyframes hello{
+   0%{
+      transform: rotate(0);
+   }
+   25%{
+      transform: rotate(15deg);
+   }
+   50%{
+      transform: rotate(0);
+   }
+   75%{
+      transform: rotate(15deg);
+   }
+   100%{
+      transform: rotate(0);
+   }
+}

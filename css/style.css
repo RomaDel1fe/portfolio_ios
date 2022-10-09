@@ -224,6 +224,7 @@ a {
 
 .content {
   padding: 60px 0 0 0;
+  overflow: hidden;
 }
 
 .hello {
@@ -234,6 +235,19 @@ a {
   position: absolute;
   top: 0;
   z-index: -1;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.hello__hand img {
+  width: 100%;
+}
+
+.hello__hand._anim._active {
+  -webkit-animation-name: hello;
+          animation-name: hello;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .hello__text h1 {
@@ -340,6 +354,52 @@ a {
   bottom: 0%;
   top: auto;
   height: 100%;
+}
+
+@-webkit-keyframes hello {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+}
+
+@keyframes hello {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
 }
 
 .lprojects {
@@ -611,6 +671,7 @@ a {
   padding: 0 0 20px 0;
   margin: 0 0 50px 0;
   position: relative;
+  overflow: hidden;
 }
 
 .contact__hand {
@@ -618,6 +679,19 @@ a {
   top: 80px;
   right: 0;
   z-index: -1;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.contact__hand img {
+  width: 100%;
+}
+
+.contact__hand._anim._active {
+  -webkit-animation-name: this;
+          animation-name: this;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 
 .form {
@@ -734,6 +808,52 @@ a {
 
 #message {
   height: 141px;
+}
+
+@-webkit-keyframes this {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  50% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  75% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes this {
+  0% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  50% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  75% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
 }
 
 .footer__content {
@@ -973,5 +1093,12 @@ a {
 @media (max-width: 1180px) {
   .contact__hand {
     opacity: 0.3;
+  }
+}
+
+@media (max-width: 426px) {
+  .contact__hand {
+    top: 90px;
+    left: 90px;
   }
 }
