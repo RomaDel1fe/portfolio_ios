@@ -1,9 +1,14 @@
+@media (max-width:843px){
+   .lprojects__list{
+      justify-content: center;
+   }
+   .card{
+      margin: 0 5px 16px 0;
+   }
+}
 @media (max-width:769px){
    .lprojects{
       margin: 0 0 50px 0;
-   }
-   .lprojects__list{
-      justify-content: center;
    }
    .card{
       margin: 0 0 16px 0;

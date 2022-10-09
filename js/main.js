@@ -1,5 +1,16 @@
+$(document).ready(function(){
+  $('.header__menu a').each(function(){
+    let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
+    let link = this.href;
+    if(location == link){
+        $(this).addClass('_active');
+    }
+  })
+})
+
 const burger = document.querySelector('.header__burger');
 const menuBody = document.querySelector('.header__menu');
+const menuLink = document.querySelector('.header__link');
 const formInput = document.querySelector('.form__input');
 const formLabel = document.querySelector('.form__label');
 const animItems = document.querySelectorAll('._anim');

@@ -14,6 +14,7 @@
       }
       &._anim._active{
          animation-name: this;
+         animation-delay: 1s;
          animation-duration: 2s;
       }
    }
@@ -40,6 +41,7 @@
          line-height: 150%;
          color: $ft-color;
          padding: 0 8px;
+         border-radius: 4px;
          background: #FFF;
       }
 		&__input {
