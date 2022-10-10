@@ -1411,6 +1411,116 @@ a {
           justify-content: space-between;
 }
 
+.about-me {
+  margin: 50px 0 0 0;
+}
+
+.about-me__title {
+  margin: 0 0 32px 0;
+}
+
+.about-me__title h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 125%;
+  color: #BF7506;
+}
+
+.accordion__item {
+  margin: 0 0 10px 0;
+  border: 2px solid #E0DEDC;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion__item:last-child {
+  margin-bottom: 0;
+}
+
+.accordion__item:hover {
+  border-color: #BF7506;
+}
+
+.accordion__item._focus {
+  border-color: #BF7506;
+}
+
+.accordion__title {
+  position: relative;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.accordion__title::before, .accordion__title::after {
+  content: "";
+  width: 10px;
+  height: 1px;
+  background: #DD9C3C;
+  position: absolute;
+  top: 27px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.accordion__title::before {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  left: 10px;
+}
+
+.accordion__title::after {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+  left: 17.5px;
+}
+
+.accordion__title._active::before {
+  -webkit-transform: rotate(-40deg);
+          transform: rotate(-40deg);
+}
+
+.accordion__title._active::after {
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.accordion__title h4 {
+  font-size: 25px;
+  font-weight: 500;
+  color: #211B12;
+  padding: 0 0 0 35px;
+}
+
+.accordion__content {
+  display: none;
+  padding: 10px 15px 20px;
+}
+
+.accordion__content ul li {
+  position: relative;
+  padding-left: 10px;
+}
+
+.accordion__content ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  background-color: #121314;
+  border-radius: 50%;
+}
+
+.accordion__content p,
+.accordion__content ul li {
+  line-height: 125%;
+  font-size: 20px;
+  font-weight: 300;
+  color: #211B12;
+}
+
 @media (max-width: 843px) {
   .projects__list {
     -webkit-box-pack: center;

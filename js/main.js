@@ -8,6 +8,16 @@ $(document).ready(function(){
   })
 })
 
+$(document).ready(function(){
+  $('.accordion__title').click(function(event){
+     if($('.accordion').hasClass('one')){
+        $('.accordion__title').not($(this)).removeClass('_active');
+        $('.accordion__content').not($(this).next()).slideUp(300);
+     }
+     $(this).toggleClass('_active').next().slideToggle(400);
+  });
+});
+
 const burger = document.querySelector('.header__burger');
 const menuBody = document.querySelector('.header__menu');
 const menuLink = document.querySelector('.header__link');

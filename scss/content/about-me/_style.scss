@@ -1,0 +1,103 @@
+.about-me {
+   margin: 50px 0 0 0;
+   &__title {
+      margin: 0 0 32px 0;
+      & h2{
+         font-weight: 700;
+         font-size: 48px;
+         line-height: 125%;
+         color: $hd-color;
+      }
+   }
+
+   &__content {
+   }
+}
+.accordion {
+
+   &__item {
+      margin: 0 0 10px 0;
+      border: 2px solid $br-color;
+      border-radius: 4px;
+      overflow: hidden;
+      &:last-child{
+         margin-bottom: 0;
+      }
+      &:hover{
+         border-color: $hd-color;
+      }
+      &._focus{
+         border-color: $hd-color;
+      }
+   }
+
+   &__title {
+      position: relative;
+      padding: 15px 0;
+      cursor: pointer;
+      &::before,
+      &::after{
+         content: "";
+         width: 10px;
+         height: 1px;
+         background: $hd-color2;
+         position: absolute;
+         top: 27px;
+         transition: all 0.3s linear;
+      }
+      &._active::before,
+      &._active::before{
+         
+      }
+      &::before{
+         transform: rotate(40deg);
+         left: 10px;
+      }
+      &::after{
+         transform: rotate(-40deg);
+         left: 17.5px;
+      }
+      &._active::before{
+         transform: rotate(-40deg);
+      }
+      &._active::after{
+         transform: rotate(40deg);
+      }
+      & h4{
+         font-size: 25px;
+         font-weight: 500;
+         color: $m-color;
+         padding: 0 0 0 35px;
+         
+      }
+   }
+
+   &__content {
+      display: none;
+      padding: 10px 15px 20px;
+      & ul li{
+         position: relative;
+         padding-left: 10px;
+      }
+      & ul li::before{
+         content: "";
+         position: absolute;
+         left: 0;
+         top: 6px;
+         display: inline-block;
+         height: 5px;
+         width: 5px;
+         background-color: #121314;
+         border-radius: 50%;
+      }
+      & p,
+      ul li{
+         line-height: 125%;
+         font-size: 20px;
+         font-weight: 300;
+         color: $m-color;
+      }
+   }
+}
+.one {
+}
