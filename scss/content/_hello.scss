@@ -5,9 +5,11 @@
 }
 .hello {
    margin: 0 0 114px 0;
+   overflow: hidden;
    &__hand{
       position: absolute;
       top: 0;
+      left: -200px;
       z-index: -1;
       transition: all 0.2s linear;
       
@@ -15,8 +17,7 @@
          width: 100%;
       }
       &._anim._active{
-         animation-name: hello;
-         animation-duration: 2s;
+         animation: hello 2s both linear;
       }
    }
 		&__text {
@@ -109,20 +110,33 @@
 		}
 }
 
-@keyframes hello{
-   0%{
-      transform: rotate(0);
+
+@keyframes hello {
+   0%,
+   100% {
+     -webkit-transform: rotate(0deg);
+             transform: rotate(0deg);
+     -webkit-transform-origin: 0 100%;
+             transform-origin: 0 100%;
    }
-   25%{
-      transform: rotate(15deg);
+   10% {
+     -webkit-transform: rotate(2deg);
+             transform: rotate(2deg);
    }
-   50%{
-      transform: rotate(0);
+   25% {
+     -webkit-transform: rotate(-4deg);
+             transform: rotate(-4deg);
    }
-   75%{
-      transform: rotate(15deg);
+   50% {
+     -webkit-transform: rotate(4deg);
+             transform: rotate(4deg);
    }
-   100%{
-      transform: rotate(0);
+   75% {
+     -webkit-transform: rotate(-4deg);
+             transform: rotate(-4deg);
    }
-}
+   90% {
+     -webkit-transform: rotate(-2deg);
+             transform: rotate(-2deg);
+   }
+ }

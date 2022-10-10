@@ -3,25 +3,35 @@
       opacity: 0.3;
    }
    @keyframes hello{
-      0%{
-         transform: rotate(0);
-         opacity: 0.3;
+      0%,
+      100% {
+      -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+      -webkit-transform-origin: 0 100%;
+               transform-origin: 0 100%;
+               opacity: 0.3;
       }
-      25%{
-         transform: rotate(15deg);
-         opacity: 0.5;
+      10% {
+      -webkit-transform: rotate(2deg);
+               transform: rotate(2deg);
+               opacity: 0.5;
       }
-      50%{
-         transform: rotate(0);
-         opacity: 0.5;
+      25% {
+      -webkit-transform: rotate(-4deg);
+               transform: rotate(-4deg);
       }
-      75%{
-         transform: rotate(15deg);
-         opacity: 0.5;
+      50% {
+      -webkit-transform: rotate(4deg);
+               transform: rotate(4deg);
       }
-      100%{
-         transform: rotate(0);
-         opacity: 0.3;
+      75% {
+      -webkit-transform: rotate(-4deg);
+               transform: rotate(-4deg);
+      }
+      90% {
+      -webkit-transform: rotate(-2deg);
+               transform: rotate(-2deg);
+               opacity: 0.5;
       }
    }
 }
