@@ -83,3 +83,78 @@ function offset(el){
   return { top: rect.top + scrollTop, left: rect.left + scrollLeft}
 }
 animOnScroll();
+
+// let uname = getElemrntById('name').value;
+// let email = getElemrntById('email').value;
+// let message = getElemrntById('message').value;
+
+// let tg = {
+//   token: "5500736755:AAGEQqzkirRvnB94ZiCaUC3qfkTbjh76s5A", // Your bot's token that got from @BotFather
+//   chat_id: "353959478" // The user's(that you want to send a message) telegram chat id
+// }
+
+// /**
+// * By calling this function you can send message to a specific user()
+// * @param {String} the text to send
+// *
+// */
+// function sendMessage(text){
+//   const url = `https://api.telegram.org/bot${tg.token}/sendMessage` // The url to request
+
+//   const obj = {
+//       chat_id: tg.chat_id, // Telegram chat id
+//       text: text // The text to send
+//   };
+
+//   const xht = new XMLHttpRequest();
+//   xht.open("POST", url, true);
+//   xht.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+//   xht.send(JSON.stringify(obj));
+// }
+
+// // Now you can send any text(even a form data) by calling sendMessage function.
+// // For example if you want to send the 'hello', you can call that function like this:
+
+// sendMessage("hello");
+
+// // sendMessage("Имя"+uname+"Почта"+email+"Сообщение"+message);
+
+// // document.addEventListener("click", formMessage);
+
+// // function formMessage(event){
+// //   if(event.target.closest('#btn_form')){
+// //    sendMessage(uname);
+// //    sendMessage(email);
+// //    sendMessage(message);
+// //   }
+// // }
+
+let tg = {
+  token: "5500736755:AAGEQqzkirRvnB94ZiCaUC3qfkTbjh76s5A", // Your bot's token that got from @BotFather
+  chat_id: "353959478" // The user's(that you want to send a message) telegram chat id
+}
+
+/**
+* By calling this function you can send message to a specific user()
+* @param {String} the text to send
+*
+*/
+function sendMessage(text)
+{
+  const url = `https://api.telegram.org/bot${tg.token}/sendMessage` // The url to request
+
+  const obj = {
+      chat_id: tg.chat_id, // Telegram chat id
+      text: text // The text to send
+  };
+
+  const xht = new XMLHttpRequest();
+  xht.open("POST", url, true);
+  xht.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+  xht.send(JSON.stringify(obj));
+}
+
+// Now you can send any text(even a form data) by calling sendMessage function.
+// For example if you want to send the 'hello', you can call that function like this:
+
+sendMessage("hello");
