@@ -1,18 +1,105 @@
 .my-contacts {
-
+   padding: 0 0 20px 0;
+   margin: 0 0 100px 0;
    &__title {
+      margin: 0 0 32px 0;
+      & h2{
+         font-weight: 700;
+         font-size: 48px;
+         line-height: 125%;
+         color: $m-color;
+      }
    }
 
    &__content {
+      display: flex;
+      flex-wrap: wrap;
    }
-
+   &__map{
+      flex: 0 1 50%;
+      max-width: 300px;
+      margin: 0 auto;
+      transition: all 0.2s linear;
+      &._anim{
+         animation: slide-in-left 0.5s 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      }
+      & iframe{
+         border-radius: 20px;
+         transition: all 0.2s linear;
+      &:hover{
+         box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+      }
+      }
+   }
    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      flex: 0 1 50%;
+      &._anim{
+         animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      }
    }
 
    &__link {
+      display: inline-block;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 135%;
+      color: $m-color;
+      transition: all 0.2s linear;
+      &:hover{
+         color: $hd-color2;
+         &>.icon-telegram{
+            transform: translateX(-15px);
+         }
+         &>.icon-github{
+            transform: translateX(-15px);
+         }
+         &>.icon-instagram{
+            transform: translateX(-15px);
+         }
+         &>.icon-linkedin{
+            transform: translateX(-15px);
+         }
+      }
+      & .icon-telegram,
+      .icon-github,
+      .icon-instagram,
+      .icon-linkedin{
+         display: inline-block;
+         margin: 0 15px 0 0;
+         font-size: 22px;
+         transition: all 0.2s linear;
+      }
    }
 }
-.container {
-}
-.my-contacts-map {
-}
+
+@keyframes slide-in-right {
+   0% {
+     -webkit-transform: translateX(1000px);
+             transform: translateX(1000px);
+     opacity: 0;
+   }
+   100% {
+     -webkit-transform: translateX(0);
+             transform: translateX(0);
+     opacity: 1;
+   }
+ }
+ 
+
+@keyframes slide-in-left {
+   0% {
+     -webkit-transform: translateX(-1000px);
+             transform: translateX(-1000px);
+     opacity: 0;
+   }
+   100% {
+     -webkit-transform: translateX(0);
+             transform: translateX(0);
+     opacity: 1;
+   }
+ }

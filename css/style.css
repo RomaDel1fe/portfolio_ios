@@ -1566,6 +1566,165 @@ a {
   color: #211B12;
 }
 
+.my-contacts {
+  padding: 0 0 20px 0;
+  margin: 0 0 100px 0;
+}
+
+.my-contacts__title {
+  margin: 0 0 32px 0;
+}
+
+.my-contacts__title h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 125%;
+  color: #211B12;
+}
+
+.my-contacts__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.my-contacts__map {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  max-width: 300px;
+  margin: 0 auto;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.my-contacts__map._anim {
+  -webkit-animation: slide-in-left 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-left 0.5s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.my-contacts__map iframe {
+  border-radius: 20px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.my-contacts__map iframe:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+          box-shadow: rgba(0, 0, 0, 0.3) 0px 4px 12px;
+}
+
+.my-contacts__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.my-contacts__list._anim {
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.my-contacts__link {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 135%;
+  color: #211B12;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.my-contacts__link:hover {
+  color: #DD9C3C;
+}
+
+.my-contacts__link:hover > .icon-telegram {
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.my-contacts__link:hover > .icon-github {
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.my-contacts__link:hover > .icon-instagram {
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.my-contacts__link:hover > .icon-linkedin {
+  -webkit-transform: translateX(-15px);
+          transform: translateX(-15px);
+}
+
+.my-contacts__link .icon-telegram,
+.my-contacts__link .icon-github,
+.my-contacts__link .icon-instagram,
+.my-contacts__link .icon-linkedin {
+  display: inline-block;
+  margin: 0 15px 0 0;
+  font-size: 22px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 843px) {
   .projects__list {
     -webkit-box-pack: center;
@@ -1592,5 +1751,37 @@ a {
   }
   .card__title h3 {
     font-size: 22px;
+  }
+}
+
+@media (max-width: 769px) {
+  .my-contacts {
+    margin: 0 0 50px 0;
+  }
+  .my-contacts__title h2 {
+    font-size: 42px;
+  }
+  .my-contacts__content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .my-contacts__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 0 0 20px 0;
+  }
+  .my-contacts__list li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 50%;
+            flex: 0 1 50%;
+    margin: 0 0 10px 0;
+    text-align: center;
   }
 }
