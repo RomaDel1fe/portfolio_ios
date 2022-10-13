@@ -1,0 +1,60 @@
+.projects {
+   padding: 0 0 20px 0;
+   margin: 0 0 100px 0;
+   &__title {
+      margin: 0 0 32px 0;
+      & h2{
+         font-weight: 700;
+         font-size: 48px;
+         line-height: 125%;
+         color: $m-color;
+      }
+   }
+
+   &__content {
+   }
+
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+
+   &__card {
+   }
+}
+.container {
+}
+.card {
+
+   &__img {
+   }
+
+   &__body {
+   }
+
+   &__title {
+   }
+
+   &__tags {
+   }
+
+   &__tags-body {
+   }
+
+   &__decription {
+   }
+
+   &__links {
+   }
+
+   &__code {
+   }
+
+   &__demo {
+   }
+}
+.icon-code {
+}
+.icon-demo {
+}

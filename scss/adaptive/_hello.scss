@@ -1,0 +1,65 @@
+@media (max-width:1180px){
+   .hello__hand{
+      opacity: 0.3;
+   }
+   @keyframes hello{
+      0%,
+      100% {
+      -webkit-transform: rotate(0deg);
+               transform: rotate(0deg);
+      -webkit-transform-origin: 0 100%;
+               transform-origin: 0 100%;
+               opacity: 0.3;
+      }
+      10% {
+      -webkit-transform: rotate(2deg);
+               transform: rotate(2deg);
+               opacity: 0.5;
+      }
+      25% {
+      -webkit-transform: rotate(-4deg);
+               transform: rotate(-4deg);
+      }
+      50% {
+      -webkit-transform: rotate(4deg);
+               transform: rotate(4deg);
+      }
+      75% {
+      -webkit-transform: rotate(-4deg);
+               transform: rotate(-4deg);
+      }
+      90% {
+      -webkit-transform: rotate(-2deg);
+               transform: rotate(-2deg);
+               opacity: 0.5;
+      }
+   }
+}
+
+@media (max-width:426px){
+   .hello{
+      &__text{
+         & h1{
+            font-size: 42px;
+         }
+         & p{
+            font-size: 22px;
+         }
+      }
+   }
+}
+
+@media (max-width:376px){
+   .hello__social{
+      flex-direction: column;
+   }
+   .social__list{
+      margin: 0 0 6px 0;
+   }
+   .social__link{
+      padding: 6px 0;
+   }
+   .social__download{
+      // width: 126px;
+   }
+}

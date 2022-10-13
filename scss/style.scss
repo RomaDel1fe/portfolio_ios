@@ -1,0 +1,26 @@
+@import "abstract/variable";
+
+@import "base/font";
+@import "base/reset";
+
+@import "content/header";
+@import "content/hello";
+@import "content/lprojects";
+@import "content/about";
+@import "content/contact";
+@import "content/footer";
+
+@import "adaptive/header";
+@import "adaptive/hello";
+@import "adaptive/lprojects";
+@import "adaptive/about";
+@import "adaptive/contact";
+@import "adaptive/footer";
+
+@import "content/projects/style";
+@import "content/about-me/style";
+@import "content/contacts/style";
+
+@import "adaptive/projects/style";
+@import "adaptive/about-me/style";
+@import "adaptive/contacts/style";

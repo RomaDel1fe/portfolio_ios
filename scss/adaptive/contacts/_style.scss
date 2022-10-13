@@ -1,0 +1,26 @@
+@media (max-width:769px){
+   .my-contacts{
+      margin: 0 0 50px 0;
+      &__title{
+         & h2{
+            font-size: 42px;
+         }
+      }
+      &__content{
+         align-items: center;
+         flex-direction: column-reverse;
+      }
+      &__list{
+         flex-direction: row;
+         margin: 0 0 20px 0;
+         & li{
+            flex: 0 1 50%;
+            margin: 0 0 10px 0;
+            text-align: center;
+         }
+      }
+      &__link{
+
+      }
+   }
+}

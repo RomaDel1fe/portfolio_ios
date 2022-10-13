@@ -1,0 +1,96 @@
+.about {
+   padding: 0 0 20px 0;
+   margin: 0 0 100px 0;
+   &__bio {
+      display: flex;
+      margin: 0 0 40px 0;
+   }
+
+   &__img {
+      flex: 1 0 360px;
+      max-width: 360px;
+      max-height: 440px;
+      border-radius: 20px;
+      overflow: hidden;
+      & img{
+         width: 100%;
+         transform: scale(1.8) translate(5%, 12.5%);
+      }
+   }
+
+   &__bio-info {
+      display: inline-block;
+      padding: 27px 0 0 0;
+      margin: 0 0 0 56px;
+   }
+
+   &__bio-title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 135%;
+      color: $m-color;
+      margin: 0 0 16px 0;
+      & span{
+         font-size: 32px;
+         line-height: 125%;
+         color: $hd-color;
+      }
+   }
+
+   &__bio-body {
+   }
+
+   &__bio-description {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $m-color;
+      margin: 0 0 16px 0;
+   }
+
+   &__bio-keywords {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 150%;
+      color: $hd-color2;
+      margin: 0 0 16px 0;
+   }
+
+   &__skills {
+   }
+
+   &__skills-title {
+      margin: 0 0 13px;
+      & h3{
+         font-weight: 700;
+         font-size: 24px;
+         line-height: 135%;
+         color: $m-color;
+      }
+   }
+
+   &__skills-tags {
+   }
+}
+
+.tags {
+   &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+   }
+
+   &__item {
+      flex-grow: 0;
+      padding: 2px 8px;
+      margin: 0 4px 0 0;
+      border: 1px solid $hd-color;
+      border-radius: 4px;
+      & span{
+         font-weight: 400;
+         font-size: 16px;
+         line-height: 150%;
+         color: $m-color;
+      }
+   }
+}
