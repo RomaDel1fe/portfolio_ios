@@ -160,7 +160,7 @@ function inputTracker(event){
 }
 
 
-let time = 10;
+let time = 8;
 const countDownEl = document.getElementById('countdown');
 
 setInterval(updateCountdown, 1000);
