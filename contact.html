@@ -39,25 +39,45 @@
          </header>
 
          <div class="content">
+            <div class="my-contacts">
+               <div class="container">
+                  <div class="my-contacts__title">
+                     <h2>My contacts</h2>
+                  </div>
+                  <div class="my-contacts__content">
+                     <div class="my-contacts-map">
+                        <div id="map"></div>
+                     </div>
+                     <ul class="my-contacts__list">
+                        <li>
+                           <a href="#" class="my-contacts__link"><span class=""></span>Telegram</a>
+                           <a href="#" class="my-contacts__link"><span class=""></span>Email</a>
+                           <a href="#" class="my-contacts__link"><span class=""></span>Instagram</a>
+                           <a href="#" class="my-contacts__link"><span class=""></span>LinkedIn</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
             <div class="contact">
                <div class="contact__hand _anim">
                   <img src="img/hand_this.png" alt="">
                </div>
                <div class="container">
-                  <form action="#" class="form">
+                  <form action="main.js" method="post" class="form">
                      <div class="form__title">
                         <h3>I’m ready to talk...</h3>
                      </div>
                      <label for="name" class="form__label">Name</label>
-                     <input type="text" id="name" class="form__input">
-                     
+                     <input type="text" name="name" id="name" class="form__input" required>
+   
                      <label for="email" class="form__label">Email</label>
-                     <input type="text" id="email" class="form__input">
+                     <input type="text" name="email" id="email" class="form__input" required>
                      
                      <label for="message" class="form__label">Message</label>
-                     <textarea name="message" id="message" class="form__input message" cols="30" rows="10"></textarea>
+                     <textarea name="message"  id="message" class="form__input message" cols="30" rows="10" required></textarea>
                      <div class="form__btn">
-                        <button type="submit" class="form__btn-link"><span class="icon-send"></span>Send</button>
+                        <button type="submit" id="btn_form" class="form__btn-link"><span class="icon-send"></span>Send</button>
                      </div>
                   </form>
                </div>

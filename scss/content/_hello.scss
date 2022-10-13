@@ -3,6 +3,9 @@
    padding: 60px 0 97px 0;
    overflow: hidden;
 }
+.speciality{
+   color: $hd-color;
+}
 .hello {
    margin: 0 0 114px 0;
    overflow: hidden;
@@ -21,21 +24,24 @@
       }
    }
 		&__text {
-         & h1{
+         &-title{
             font-weight: 700;
             font-size: 48px;
             line-height: 125%;
             color: $m-color;
             margin: 0 0 8px 0;
+            &._anim{
+               animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
          }
-         & p{
+         &-paragraph{
             font-weight: 700;
             font-size: 24px;
             line-height: 135%;
             color: $m-color;
             margin: 0 0 24px 0;
-            & span{
-               color: $hd-color;
+            &._anim{
+               animation: slide-in-right 0.5s 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
          }
 		}
@@ -138,5 +144,18 @@
    90% {
      -webkit-transform: rotate(-2deg);
              transform: rotate(-2deg);
+   }
+ }
+
+ @keyframes slide-in-right {
+   0% {
+     -webkit-transform: translateX(1000px);
+             transform: translateX(1000px);
+     opacity: 0;
+   }
+   100% {
+     -webkit-transform: translateX(0);
+             transform: translateX(0);
+     opacity: 1;
    }
  }
