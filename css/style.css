@@ -1085,6 +1085,75 @@ a {
   color: #211B12;
 }
 
+.thanks {
+  height: 600px;
+  padding: 0 0 20px 0;
+  margin: 0 0 50px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.thanks__hand {
+  position: absolute;
+  top: 80px;
+  right: -200px;
+  z-index: -1;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.thanks__hand img {
+  width: 100%;
+}
+
+.thanks__hand._anim {
+  -webkit-animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.thanks .container {
+  padding: 80px 0 0 0;
+}
+
+.thanks__title {
+  margin: 0 0 32px 0;
+  text-align: center;
+}
+
+.thanks__title h2 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 125%;
+  color: #211B12;
+}
+
+.thanks__text {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 135%;
+  color: #211B12;
+  text-align: center;
+}
+
+.thanks__countdown-body {
+  text-align: center;
+}
+
+.thanks__countdown-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 135%;
+  color: #211B12;
+}
+
+.thanks__countdown {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 135%;
+  color: #BF7506;
+}
+
 @media (max-width: 769px) {
   body.lock {
     overflow: hidden;
@@ -1426,6 +1495,18 @@ a {
   .contact__hand {
     top: 90px;
     left: 90px;
+  }
+}
+
+@media (max-width: 769px) {
+  .thanks__hand {
+    top: 150px;
+  }
+}
+
+@media (max-width: 376px) {
+  .thanks__hand {
+    top: 230px;
   }
 }
 

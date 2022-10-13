@@ -160,20 +160,18 @@ function inputTracker(event){
 }
 
 
-// mapkit.init({
-//   authorizationCallback: function(done) {
-//       var xhr = new XMLHttpRequest();
-//       xhr.open("GET", "/services/jwt");
-//       xhr.addEventListener("load", function() {
-//           done(this.responseText);
-//       });
-//       xhr.send();
-//   }
-// });
+let time = 10;
+const countDownEl = document.getElementById('countdown');
 
-// var Cupertino = new mapkit.CoordinateRegion(
-//   new mapkit.Coordinate(37.3316850890998, -122.030067374026),
-//   new mapkit.CoordinateSpan(0.167647972, 0.354985255)
-// );
-// var map = new mapkit.Map("map");
-// map.region = Cupertino;
+setInterval(updateCountdown, 1000);
+
+function updateCountdown(){
+  if(time < 0){
+    return 0;
+  }
+  // const minutes = Math.floor(time / 60);
+  // let seconds = time % 60;
+  // seconds = seconds < 10 ? "0" + seconds: seconds;
+  countDownEl.innerHTML = `${time} `;
+  time--;
+}
