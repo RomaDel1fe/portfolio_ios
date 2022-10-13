@@ -31,7 +31,7 @@
             color: $m-color;
             margin: 0 0 8px 0;
             &._anim{
-               animation: slide-in-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+               animation: slide-in-right 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
          }
          &-paragraph{
@@ -41,7 +41,7 @@
             color: $m-color;
             margin: 0 0 24px 0;
             &._anim{
-               animation: slide-in-right 0.5s 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+               animation: slide-in-right 0.3s 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
             }
          }
 		}

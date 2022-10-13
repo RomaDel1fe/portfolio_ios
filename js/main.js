@@ -88,13 +88,13 @@ var content = ' I study web technologies every day and this is my portfolio.';
 var ele = '<span>' + content.split('').join('</span><span>') + '</span>';
 
 $(ele).hide().appendTo('.hello__text p').each(function (i) {
-  $(this).delay(1000);  
-  $(this).delay(100 * i).css({
+  $(this).delay(600);  
+  $(this).delay(50 * i).css({
         display: 'inline',
         opacity: 0
     }).animate({
         opacity: 1
-    }, 100);
+    }, 50);
 });
 
 // let uname = getElemrntById('name').value;
