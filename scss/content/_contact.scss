@@ -18,7 +18,7 @@
          animation-duration: 2s;
       }
       &._tracker-e{
-         top: 190px;
+         top: 200px;
       }
       &._tracker-m{
          top: 320px;
@@ -29,98 +29,188 @@
    display: block;
    max-width: 435px;
    margin: 0 auto;
-		&__title {
-         margin: 0 0 16px 0;
-         & h3{
-            font-weight: 700;
-            font-size: 32px;
-            line-height: 125%;
-            color: $m-color;
-         }
-		}
-      &__label{
-         position: relative;
-         top: 12px;
-         left: 16px;
-         font-weight: 400;
-         font-size: 16px;
-         line-height: 150%;
-         color: $ft-color;
-         padding: 0 8px;
-         border-radius: 4px;
-         background: #FFF;
-      }
-		&__input {
-         display: block;
-         font-weight: 500;
-         font-size: 20px;
-         height: 56px;
-         width: calc(100% - 28px);
-         padding: 4px 6px 4px 16px;
-         margin: 0 0 24px 0;
-         color: $hd-color2;
-         background: transparent;
-         border: 3px solid $br-color;
-         border-radius: 4px;
-         outline: none;
-         transition: all 0.2s linear;
-         &:hover{
-            border-color: $ft-color;
-         }
-         &:focus{
-            border-color: $hd-color;
-         }
-         &:active{
-            border-color: $hd-color2;
-         }
-		}
-
-		&__btn {
-         text-align: right;
-		}
-
-		&__btn-link {
-         display: inline-flex;
-         align-items: center;
+   position: relative;
+   &::after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #FFF;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 0;
+      transition: all 0.3s linear;
+   }
+   &._sending::after{
+      opacity: 0.8;
+      visibility: visible;
+   }
+   &__title {
+      margin: 0 0 16px 0;
+      & h3{
          font-weight: 700;
-         font-size: 16px;
-         line-height: 150%;
+         font-size: 32px;
+         line-height: 125%;
          color: $m-color;
-         background: transparent;
-         padding: 7px 8px;
-         border: 0;
-         position: relative;
+      }
+   }
+   &__label{
+      position: relative;
+      top: 12px;
+      left: 16px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: $ft-color;
+      padding: 0 8px;
+      border-radius: 4px;
+      background: #FFF;
+   }
+   &__input {
+      display: block;
+      font-weight: 500;
+      font-size: 20px;
+      height: 56px;
+      width: calc(100% - 28px);
+      padding: 4px 6px 4px 16px;
+      margin: 0 0 24px 0;
+      color: $hd-color2;
+      background: transparent;
+      border: 3px solid $br-color;
+      border-radius: 4px;
+      outline: none;
+      transition: all 0.2s linear;
+      &:hover{
+         border-color: $ft-color;
+      }
+      &:focus{
+         border-color: $hd-color;
+      }
+      &:active{
+         border-color: $hd-color2;
+      }
+      &._error{
+         border-color: #d00000;
+      }
+   }
+
+   &__btn {
+      text-align: right;
+   }
+
+   &__btn-link {
+      display: inline-flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 150%;
+      color: $m-color;
+      background: transparent;
+      padding: 7px 8px;
+      border: 0;
+      position: relative;
+      transition: all 0.3s linear;
+      &::after{
+         content: "";
+         display: block;
+         position: absolute;
+         left: 0px;
+         bottom: 0px;
+         height: 2px;
+         width: 100%;
+         z-index: -1;
+         content: '';
+         color: #000 !important;
+         background: $hd-color;
          transition: all 0.3s linear;
-         &::after{
-            content: "";
-            display: block;
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            height: 2px;
-            width: 100%;
-            z-index: -1;
-            content: '';
-            color: #000 !important;
-            background: $hd-color;
-            transition: all 0.3s linear;
-         }
-         &:hover{
+      }
+      &:hover{
+         color: #FFF !important;
+         background-color: transparent;
+         & .icon-clip::before{
             color: #FFF !important;
-            background-color: transparent;
-            & .icon-clip::before{
-               color: #FFF !important;
-            }
          }
-         &:hover::after{
-            bottom: 0%;
-            top: auto;
-            height: 100%;
-         }
-		}
+      }
+      &:hover::after{
+         bottom: 0%;
+         top: auto;
+         height: 100%;
+      }
+   }
 }
 #message{
    height: 141px;
+   resize: vertical;
+}
+
+.loader-ios {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   opacity: 0;
+   animation: iosIntro infinite;
+   z-index: 1;
+   &._sending{
+      opacity: 1;
+   }
+   svg {
+      fill: #868686;
+      
+      path:nth-of-type(1) {
+         animation: pulse 1s infinite linear;
+      }
+      path:nth-of-type(2) {
+         animation: pulse 1s -.083s infinite linear;
+      }
+      path:nth-of-type(3) {
+         animation: pulse 1s -.166s infinite linear;
+      }
+      path:nth-of-type(4) {
+         animation: pulse 1s -.249s infinite linear;
+      }
+      path:nth-of-type(5) {
+         animation: pulse 1s -.332s infinite linear;
+      }
+      path:nth-of-type(6) {
+         animation: pulse 1s -.415s infinite linear;
+      }
+      path:nth-of-type(7) {
+         animation: pulse 1s -.498s infinite linear;
+      }
+      path:nth-of-type(8) {
+         animation: pulse 1s -.581s infinite linear;
+      }  
+      path:nth-of-type(9) {
+         animation: pulse 1s -.664s infinite linear;
+      }
+      path:nth-of-type(10) {
+         animation: pulse 1s -.747s infinite linear;
+      }
+      path:nth-of-type(11) {
+         animation: pulse 1s -.83s infinite linear;
+      }
+      path:nth-of-type(12) {
+         animation: pulse 1s -.913s infinite linear;
+      }
+   }
+}
+
+@keyframes pulse {
+50% { fill: #868686; }
+to { fill: rgba(134,134,134,.4); }
+}
+
+@keyframes iosIntro {
+from {
+   transform: scale(0);
+   opacity: 0;
+}
+to {
+   transform: scale(1);
+   opacity: 1;
+}
 }
 
 @keyframes this{

@@ -97,50 +97,83 @@ $(ele).hide().appendTo('.hello__text p').each(function (i) {
     }, 50);
 });
 
-// let uname = getElemrntById('name').value;
-// let email = getElemrntById('email').value;
-// let message = getElemrntById('message').value;
 
-// let tg = {
-//   token: "5500736755:AAGEQqzkirRvnB94ZiCaUC3qfkTbjh76s5A", // Your bot's token that got from @BotFather
-//   chat_id: "353959478" // The user's(that you want to send a message) telegram chat id
-// }
+"use strict"
 
-// /**
-// * By calling this function you can send message to a specific user()
-// * @param {String} the text to send
-// *
-// */
-// function sendMessage(text){
-//   const url = `https://api.telegram.org/bot${tg.token}/sendMessage` // The url to request
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('form');
+	const loader = document.querySelector('.loader-ios');
+	form.addEventListener('submit', formSend);
 
-//   const obj = {
-//       chat_id: tg.chat_id, // Telegram chat id
-//       text: text // The text to send
-//   };
+	async function formSend(e) {
+		e.preventDefault();
 
-//   const xht = new XMLHttpRequest();
-//   xht.open("POST", url, true);
-//   xht.setRequestHeader("Content-type", "application/json; charset=UTF-8");
-//   xht.send(JSON.stringify(obj));
-// }
+		let error = formValidate(form);
 
-// // Now you can send any text(even a form data) by calling sendMessage function.
-// // For example if you want to send the 'hello', you can call that function like this:
+		let formData = new FormData(form);
 
-// sendMessage("hello");
+		if (error === 0) {
+			form.classList.add('_sending');
+            loader.classList.add('_sending');
+			let response = await fetch('sendmail.php', {
+				method: 'POST',
+				body: formData
+			});
+			if (response.ok) {
+				let result = await response.json();
+				alert(result.message);
+				form.reset();
+				form.classList.remove('_sending');
+                loader.classList.remove('_sending');
+			} else {
+				alert("Ошибка");
+				form.classList.remove('_sending');
+                loader.classList.remove('_sending');
+			}
+		} else {
+			alert('Заполните обязательные поля');
+		}
+	}
 
-// // sendMessage("Имя"+uname+"Почта"+email+"Сообщение"+message);
 
-// document.addEventListener("click", formMessage);
+	function formValidate(form) {
+		let error = 0;
+		let formReq = document.querySelectorAll('._req');
 
-// function formMessage(event){
-//   if(event.target.closest('#btn_form')){
-//    sendMessage(uname);
-//    sendMessage(email);
-//    sendMessage(message);
-//   }
-// }
+		for (let index = 0; index < formReq.length; index++) {
+			const input = formReq[index];
+			formRemoveError(input);
+
+			if (input.classList.contains('_email')) {
+				if (emailTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+				formAddError(input);
+				error++;
+			} else {
+				if (input.value === '') {
+					formAddError(input);
+					error++;
+				}
+			}
+		}
+		return error;
+	}
+	function formAddError(input) {
+		input.parentElement.classList.add('_error');
+		input.classList.add('_error');
+	}
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
+	//Функция теста email
+	function emailTest(input) {
+		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+	}
+});
 
 const contactHand = document.querySelector('.contact__hand');
 
@@ -159,19 +192,3 @@ function inputTracker(event){
   }
 }
 
-
-let time = 8;
-const countDownEl = document.getElementById('countdown');
-
-setInterval(updateCountdown, 1000);
-
-function updateCountdown(){
-  if(time < 0){
-    return 0;
-  }
-  // const minutes = Math.floor(time / 60);
-  // let seconds = time % 60;
-  // seconds = seconds < 10 ? "0" + seconds: seconds;
-  countDownEl.innerHTML = `${time} `;
-  time--;
-}
