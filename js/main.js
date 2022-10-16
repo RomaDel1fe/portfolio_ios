@@ -103,6 +103,9 @@ $(ele).hide().appendTo('.hello__text p').each(function (i) {
 document.addEventListener('DOMContentLoaded', function () {
 	const form = document.getElementById('form');
 	const loader = document.querySelector('.loader-ios');
+  const handThis = document.querySelector('.contact__hand');
+  const handOk = document.querySelector('.thank__hand');
+  const thank = document.querySelector('.contact__thank');
 	form.addEventListener('submit', formSend);
 
 	async function formSend(e) {
@@ -114,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (error === 0) {
 			form.classList.add('_sending');
-            loader.classList.add('_sending');
+      loader.classList.add('_sending');
 			let response = await fetch('sendmail.php', {
 				method: 'POST',
 				body: formData
@@ -124,11 +127,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				alert(result.message);
 				form.reset();
 				form.classList.remove('_sending');
-                loader.classList.remove('_sending');
+        loader.classList.remove('_sending');
+        form.classList.add('_deactivate');
+        handThis.classList.add('_deactivate');
+        thank.classList.add('_active');
+        handOk.classList.add('_active');
 			} else {
 				alert("Ошибка");
 				form.classList.remove('_sending');
-                loader.classList.remove('_sending');
+        loader.classList.remove('_sending');
 			}
 		} else {
 			alert('Заполните обязательные поля');

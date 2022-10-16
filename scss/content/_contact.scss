@@ -12,7 +12,10 @@
       & img{
          width: 100%;
       }
-      &._anim._active{
+      &._deactivate{
+         right: -100%;
+      }
+      &._active{
          animation-name: this;
          animation-delay: 1s;
          animation-duration: 2s;
@@ -24,12 +27,56 @@
          top: 320px;
       }
    }
+   &__thank{
+      display: none;
+      max-width: 435px;
+      margin: 0 auto;
+      padding: 0 0 300px 0;
+      &._active{
+         display: block;
+      }
+      &-title{
+         text-align: center;
+         margin: 0 0 16px 0;
+         & h3{
+            font-weight: 600;
+            font-size: 38px;
+            line-height: 135%;
+            color: $m-color;
+         }
+      }
+      &-text{
+         text-align: center;
+         & p{
+            font-weight: 500;
+            font-size: 22px;
+            line-height: 125%;
+            color: $m-color;
+         }
+      }
+   }
+}
+.thank__hand{
+   position: absolute;
+   top: 0px;
+   right: -100%;
+   z-index: -1;
+   transition: all 0.2s linear;
+   &._active{
+      right: -400px;
+   }
+   & img{
+      width: 100%;
+   }
 }
 .form {
    display: block;
    max-width: 435px;
    margin: 0 auto;
    position: relative;
+   &._deactivate{
+      display: none;
+   }
    &::after{
       content: "";
       position: absolute;

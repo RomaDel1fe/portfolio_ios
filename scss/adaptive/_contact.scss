@@ -2,6 +2,7 @@
    .contact__hand{
       opacity: 0.3;
    }
+   
    @keyframes this{
       0%{
          transform: translateX(0px);
@@ -23,6 +24,16 @@
          transform: translateX(0px);
          opacity: 0.3;
       }
+   }
+}
+@media (max-width:769px){
+   .contact__hand{
+      &._deactivate{
+         right: -300%;
+      }
+   }
+   .thank__hand{
+      right: -300%;
    }
 }
 @media (max-width:426px){
