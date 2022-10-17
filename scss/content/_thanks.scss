@@ -1,0 +1,62 @@
+.thanks {
+   height: 600px;
+   padding: 0 0 20px 0;
+   margin: 0 0 50px 0;
+   position: relative;
+   overflow: hidden;
+   &__hand {
+      position: absolute;
+      top: 80px;
+      right: -200px;
+      z-index: -1;
+      transition: all 0.2s linear;
+      & img{
+         width: 100%;
+      }
+      &._anim{
+         animation: slide-in-right 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      }
+   }
+   & .container{
+      padding: 80px 0 0 0;
+
+   }
+   &__title {
+      margin: 0 0 32px 0;
+      text-align: center;
+      & h2{
+         font-weight: 700;
+         font-size: 48px;
+         line-height: 125%;
+         color: $m-color;
+      }
+   }
+
+   &__content {
+
+   }
+
+   &__text {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 135%;
+      color: $m-color;
+      text-align: center;
+   }
+   &__countdown-body{
+      text-align: center;
+   }
+   &__countdown-text{
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 135%;
+      color: $m-color;
+   }
+   &__countdown{
+      display: inline-block;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 135%;
+      color: $hd-color;
+   }
+}
