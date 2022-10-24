@@ -124,10 +124,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 			if (response.ok) {
 				let result = await response.json();
-				alert(result.message);
+				// alert(result.message);
 				form.reset();
 				form.classList.remove('_sending');
         loader.classList.remove('_sending');
+        handThis.classList.remove('_active');
         form.classList.add('_deactivate');
         handThis.classList.add('_deactivate');
         thank.classList.add('_active');
@@ -138,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
         loader.classList.remove('_sending');
 			}
 		} else {
-			alert('Заполните обязательные поля');
+			// alert('Заполните обязательные поля');
 		}
 	}
 

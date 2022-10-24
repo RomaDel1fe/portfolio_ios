@@ -1385,7 +1385,8 @@ a {
 }
 @media (max-width: 769px) {
   .contact__hand._deactivate {
-    right: -300%;
+    right: -5000px;
+    opacity: 0;
   }
   .thank__hand {
     right: -300%;
